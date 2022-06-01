@@ -19,7 +19,7 @@ public class CarModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "pkCar")
-    private Long pkCaos;
+    private Long pkCar;
 
     @Column(name = "nameCar")
     private String nameCar;

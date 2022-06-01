@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -22,6 +23,15 @@ public class CarModel {
 
     @Column(name = "nameCar")
     private String nameCar;
+
+    @Column(name = "modelCar")
+    private String modelCar;
+
+    @Column(name = "companyCar")
+    private String companyCar;
+
+    @Column(name = "dateManufacture")
+    private Date dateManufacture;
 
 
 

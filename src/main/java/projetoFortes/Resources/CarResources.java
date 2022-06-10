@@ -21,28 +21,28 @@ public class CarResources {
     private final CarService carService;
 
 
-    @GetMapping("List")
+    @GetMapping()
     List<CarModel> getCars(CarModel carModel){
         List<CarModel> carModels = carService.getCars(carModel);
 
         return carModels;
     }
 
-    @GetMapping("ListName/{nome}")
+    @GetMapping("/{nome}")
     public List<CarModel>findByName(@PathVariable String nome){
         List<CarModel> carByName = carService.findByName(nome);
 
         return carByName;
     };
 
-    @GetMapping("ListId/{id}")
+    @GetMapping("id/{id}")
     public ResponseEntity<CarModel> findById(@PathVariable Long id) throws Exception {
         CarModel carModelOptional = carService.getById(id);
 
         return ResponseEntity.ok(carModelOptional);
     }
 
-    @PostMapping("Register")
+    @PostMapping()
     public CarModel createCar(@RequestBody CarModel carModel) throws Exception {
         log.info("createCar");
         log.info("carModel: {}", carModel);
@@ -51,12 +51,12 @@ public class CarResources {
         return carCreated;
     }
 
-    @DeleteMapping("/Delete/{id}")
+    @DeleteMapping("{id}")
     public void removeCarById(@PathVariable Long id){
         carService.removeCarById(id);
     }
 
-    @PutMapping("/Refresh/{codigo}")
+    @PutMapping("/{codigo}")
     public ResponseEntity<CarModel> atualizarCli(@PathVariable Long code, @RequestBody CarModel carModel) throws Exception {
         log.info("refreshCli");
         log.info("code: {}", code);

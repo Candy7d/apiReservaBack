@@ -32,4 +32,10 @@ public class CarModel {
 
     @Column(name = "date_manufacture")
     private Date dateManufacture;
+
+    @Column(length = 800000, name = "carlogo")
+    private String imageCar;
+
+    @Column(name = "cardescricao")
+    private String descricao;
 }
